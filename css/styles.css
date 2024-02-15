@@ -1,0 +1,447 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0a192f;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+span {
+    color: orange;
+}
+
+.header {
+    background-color: #0a192f;
+    padding-inline: 16px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; 
+}
+
+.nav {
+    max-width: 1280px;
+    height: 70px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: orange;
+    font-size: 48px;
+}
+
+.nav-list {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-list a {
+    font-size: 18px;
+    color: #fff;
+    padding-block: 16px;
+}
+
+.nav-list .btn-contact,
+.left .btn-contact,
+.btn-portfolio {
+    border: 1px solid #0a192f;
+    background-color: orange;
+    border-radius: 10px;
+    padding: 8px;
+    color: #0a192f;
+    font-weight: bold;
+    transition: 0.4s
+}
+
+.btn-left {
+    width: 90px;
+}
+
+.nav-list .btn-contact:hover,
+.left .btn-contact:hover,
+.btn-portfolio:hover {
+    color: orange;
+    background-color: #0a192f;
+    border: 1px solid orange;
+}
+
+.hamburguer {
+    display: none;
+    border: none;
+    background: none;
+    border-top: 3px solid #fff;
+    cursor: pointer;
+}
+
+.hamburguer::before,
+.hamburguer::after {
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin-top: 5px;
+    position: relative;
+    
+}
+
+/*top*/
+.info-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.info-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 90%;
+    height: 70%;
+    align-items: center;
+}
+
+.info-content .left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 40%;
+}
+
+.info-content .left .presentation h1 {
+    font-size: 30px;
+}
+
+.info-content .left .presentation p {
+    font-size: 20px;
+}
+
+.info-content .left .social-links a {
+    font-size: 40px;
+    margin-right: 20px;
+    color: orange;
+    transition: 0.2s;
+}
+
+.info-content .left .social-links a:hover {
+    color: #c47f00;
+}
+
+/*right*/
+.info-content .right {
+    width: 40%;
+}
+
+.info-content .skills-content .top,
+.bottom {
+    display: flex;
+    gap: 70px;
+    margin-bottom: 50px;
+}
+
+.info-content h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.info-content .skills-content .skill {
+    border: 1px solid orange;
+    border-radius: 10px;
+    width: 130px;
+    height: 130px;
+   
+}
+
+.info-content .skills-content .skill h3 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.info-content .skills-content .skill a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    padding: 10px;
+}
+
+/*project*/
+.portfolio-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.projects-content {
+    width: 90%;
+}
+
+.portfolio-container .projects-content .projects {
+    margin-top: 30px;
+}
+
+.portfolio-container .projects-content h2 {
+    text-align: center;
+}
+
+.portfolio-container .projects .project {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 30px;
+    border-block: 1px solid orange;
+}
+
+.portfolio-container .projects .project .flex{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.portfolio-container .projects .project .flex .buttons-project {
+    display: flex;
+    gap: 20px;
+}
+
+.portfolio-container .projects .project .flex .buttons-project a {
+    width: 150px;
+}
+
+/*header*/
+@media (max-width: 750px) {
+    .hamburguer {
+        display: block;
+        z-index: 1;
+    }
+
+    .nav-list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #0a192f;
+        clip-path: circle(100px at 90% -15%);
+        transition: 1s ease-out;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+        pointer-events: none;
+    }
+
+    .nav-list a {
+        font-size: 24px;
+        opacity: 0;
+    }
+
+    .nav-list li:nth-child(1) a {
+        transition: 0.5s 0.1s;
+    }
+
+    .nav-list li:nth-child(2) a {
+     transition: 0.5s 0.3s;   
+    }
+
+    .nav-list li:nth-child(3) a {
+        transition: 0.5s 0.6s;
+    }
+
+    .nav-list li:nth-child(4) a {
+        transition: 0.5s 0.9s;
+    }
+
+    .nav.active .nav-list {
+        clip-path: circle(1500px at 90% -15%);
+        pointer-events: all;
+    }
+
+    .nav.active .nav-list a {
+        opacity: 1;
+    }
+    
+    .nav.active .hamburguer {
+        position: fixed;
+        top: 26px;
+        right: 16px;
+        border-top-color: transparent;
+    }
+
+    .nav.active .hamburguer::before {
+        transform: rotate(135deg);
+    }
+
+    .nav.active .hamburguer::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+}
+
+/*small laptops a partir de 1100px*/
+@media (max-width: 1100px) {
+
+    .info-content .left .presentation h1 {
+        font-size: 25px;
+    }
+
+    .info-content .skills-content .top,
+    .bottom {
+    gap: 20px;
+}
+}
+
+/*small 900px*/
+@media (max-width: 900px) {
+
+    .info-content .left .presentation h1 {
+        font-size: 22px;
+    }
+
+    .info-content .left .presentation p {
+        font-size: 19px;
+    }
+
+    .info-content .skills-content .top,
+    .bottom {
+    gap: 10px;
+    }
+
+    .info-content .skills-content .skill {
+        height: 110px;
+    }
+
+    .info-content .skills-content .skill h3 {
+        font-size: 15px;
+    }
+
+    .info-content .skills-content .skill a {
+        font-size: 50px;
+    }
+
+    .projects-content {
+        width: 80%;
+    }
+
+    .portfolio-container .projects-content .projects .project img {
+        width: 250px;
+        height: 120px;
+    }
+
+    .portfolio-container .projects-content .projects .project .flex {
+        padding: 10px;
+    }
+
+    .portfolio-container .projects-content .projects h3 {
+        font-size: 16px;
+    }
+
+    .portfolio-container .projects-content .projects p {
+        font-size: 13px;
+    }
+    .portfolio-container .projects .project .flex .buttons-project .btn-portfolio {
+        font-size: 12px;
+        width: 130px;
+    }
+}
+
+/*celulares 576px*/
+@media (max-width: 576px) {
+
+body, html {
+    overflow-x: hidden;
+}
+
+.header .logo {
+    font-size: 30px;
+}
+
+    .info-container {
+        height: 160vh;
+        margin-top: 20px;
+        
+    }
+
+    .info-content {
+        flex-direction: column;
+        max-width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info-content .left {
+        width: 90%;
+        justify-content: center;
+        margin-bottom: 35px;
+    }
+
+    .info-content .right {
+        width: 90%;
+    }
+
+    .info-content .left .presentation h1 {
+        font-size: 29px;
+    }
+
+    .info-content .left .presentation p {
+        font-size: 22px;
+    }
+
+    .info-content .left .social-links {
+        text-align: center;
+    }
+
+    .info-content .left .social-links a {
+        font-size: 50px;
+       
+    }
+
+    .info-content .left .text p{
+        font-size: 20px;
+    }
+
+    .portfolio-container .projects-content .projects .project {
+        flex-direction: column;
+        padding-top: 20px;
+    }
+    .portfolio-container .projects-content .projects .project img {
+        width: 300px;
+        height: 150px;
+    }
+
+    .portfolio-container .projects-content .projects .project h3 {
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .portfolio-container .projects-content .projects .project p {
+        font-size: 18px;
+    }
+
+    .portfolio-container .projects .project .flex .buttons-project .btn-portfolio {
+        font-size: 15px;
+        width: 150px;
+    }
+    
+}
+/*celulares menores */
+@media only screen and (max-width: 411px) {
+    .info-content  {
+        margin-top: 10px;
+    }
+}
